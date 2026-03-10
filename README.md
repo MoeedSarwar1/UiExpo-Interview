@@ -1,8 +1,31 @@
-# Welcome to your Expo app 👋
+# UI Interview App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A clean React Native UI component showcase built with Expo, featuring reusable components and pagination support.
 
-## Get started
+## Features
+
+- **Header Component** - Theme-aware header with customizable left/right icons
+- **Dummy Button Component** - Reusable button with multiple variants (primary, secondary, danger) and sizes
+- **FlatList with Pagination** - Infinite scroll with pull-to-refresh support
+- **Drawer Navigation** - Side navigation menu with custom drawer content
+- **Loading & Empty States** - Comprehensive state management for initial load, refreshing, and empty data
+- **Dark Mode Support** - Full theme switching support
+
+## Project Structure
+
+```
+app/               # Main app routes
+components/        # Reusable UI components
+  ├── header.tsx         # Header component
+  ├── dummy-button.tsx   # Button component
+  ├── drawer.tsx         # Drawer content
+  └── ui/                # UI sub-components
+constants/         # App constants and theme
+hooks/             # Custom React hooks
+components/data/   # Dummy data and utilities
+```
+
+## Getting Started
 
 1. Install dependencies
 
@@ -16,35 +39,42 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+3. Choose platform:
+   - Press `i` for iOS simulator
+   - Press `a` for Android emulator
+   - Press `w` for web
+   - Scan QR code with Expo Go app
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Available Components
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Header
 
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```tsx
+<Header
+  title="My Title"
+  leftIcon={<Icon />}
+  leftIconOnPress={() => {}}
+  rightIcon={<Icon />}
+  rightIconOnPress={() => {}}
+/>
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### DummyButton
 
-## Learn more
+```tsx
+<DummyButton
+  title="Press Me"
+  onPress={() => {}}
+  variant="primary" // 'primary' | 'secondary' | 'danger'
+  size="medium" // 'small' | 'medium' | 'large'
+  disabled={false}
+/>
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+## Technologies
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- Expo Router (File-based routing)
+- React Navigation (Drawer navigation)
+- TypeScript
+- React Hooks
+- Safe Area Context
